@@ -1,0 +1,488 @@
+/* ==========================================================
+   MIRSUB ADNAN - PORTFOLIO
+   style.css: one external stylesheet used by all five pages.
+
+   Sections in this file:
+   1. Basic page styles
+   2. Header and navigation
+   3. Text and links
+   4. Homepage
+   5. Project pages
+   6. About page (tables and form)
+   7. Footer
+   8. Small screens
+   ========================================================== */
+
+
+/* ---------- 1. Basic page styles ---------- */
+
+/* Remove the browser's default spacing on every element. */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background-color: #f4f2ed;
+    color: #20201e;
+    font-family: Arial, Helvetica, sans-serif;
+    line-height: 1.6;
+}
+
+/* Stop images from being wider than the box they are in. */
+img {
+    display: block;
+    max-width: 100%;
+}
+
+
+/* ---------- 2. Header and navigation ---------- */
+
+/* Flexbox puts the logo on the left and the menu on the right. */
+.site-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 7%;
+    background-color: #f4f2ed;
+    border-bottom: 1px solid #d8d5ce;
+}
+
+.logo {
+    color: #20201e;
+    font-size: 22px;
+    font-weight: bold;
+    text-decoration: none;
+}
+
+/* Orange accent colour. */
+.logo span,
+.accent {
+    color: #c45b36;
+}
+
+/* Menu items in a row (flexbox). */
+.site-nav ul {
+    display: flex;
+    gap: 24px;
+    list-style: none;
+}
+
+.site-nav a {
+    color: #55534f;
+    font-size: 14px;
+    text-decoration: none;
+}
+
+/* Hovered link and the link for the page you are on. */
+.site-nav a:hover,
+.site-nav a.active {
+    color: #c45b36;
+    text-decoration: underline;
+}
+
+
+/* ---------- 3. Text and links ---------- */
+
+/* Small orange label above headings. */
+.eyebrow {
+    color: #c45b36;
+    font-size: 12px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin-bottom: 12px;
+}
+
+h1 {
+    font-size: 64px;
+    line-height: 1.1;
+    margin-bottom: 20px;
+}
+
+h2 {
+    font-size: 34px;
+    line-height: 1.2;
+    margin-bottom: 16px;
+}
+
+h3 {
+    font-size: 20px;
+    margin-bottom: 8px;
+}
+
+p {
+    margin-bottom: 12px;
+}
+
+.muted {
+    color: #66635e;
+}
+
+.text-link {
+    color: #20201e;
+    font-weight: bold;
+}
+
+.text-link:hover {
+    color: #c45b36;
+}
+
+/* Orange button-style link. */
+.button {
+    display: inline-block;
+    background-color: #c45b36;
+    color: #ffffff;
+    font-weight: bold;
+    text-decoration: none;
+    padding: 12px 24px;
+    margin-right: 16px;
+}
+
+.button:hover {
+    background-color: #20201e;
+}
+
+/* Standard spacing for each section of a page. */
+.section {
+    padding: 70px 12%;
+}
+
+/* Dark section with light text. */
+.section-dark {
+    background-color: #20201e;
+    color: #f4f2ed;
+}
+
+.section-dark .muted {
+    color: #b9b5ad;
+}
+
+.section-dark a {
+    color: #f4f2ed;
+}
+
+/* Image captions sit under the image. */
+figcaption {
+    color: #77736d;
+    font-size: 13px;
+    margin-top: 6px;
+}
+
+
+/* ---------- 4. Homepage ---------- */
+
+/* Large opening section with one of my 3D renders as a background image.
+   The dark gradient on top makes the white text easy to read. */
+.hero {
+    background-image: linear-gradient(rgba(0, 0, 0, 0.6), rgba(0, 0, 0, 0.6)),
+                      url("images/3d-city-skyline.jpg");
+    background-size: cover;
+    background-position: center;
+    color: #ffffff;
+    padding: 160px 12% 90px;
+}
+
+.hero a {
+    color: #ffffff;
+}
+
+.hero-copy {
+    font-size: 18px;
+    max-width: 560px;
+    margin-bottom: 26px;
+}
+
+/* Two columns side by side (flexbox). */
+.split {
+    display: flex;
+    gap: 50px;
+}
+
+.split div {
+    flex: 1;
+}
+
+/* Three cards in a row (grid). */
+.card-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 30px;
+}
+
+.card {
+    color: #20201e;
+    text-decoration: none;
+    background-color: #ffffff;
+    border: 1px solid #d8d5ce;
+}
+
+.card img {
+    width: 100%;
+    height: 220px;
+    object-fit: cover;
+}
+
+.card-body {
+    padding: 18px;
+}
+
+.card-body p {
+    color: #77736d;
+    font-size: 14px;
+}
+
+/* Portrait next to the short bio (grid). */
+.about-preview {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+    align-items: center;
+}
+
+/* Three numbers in a row (flexbox). */
+.stats {
+    display: flex;
+    gap: 40px;
+    margin: 20px 0;
+}
+
+.stats strong {
+    display: block;
+    font-size: 32px;
+    color: #c45b36;
+}
+
+.stats span {
+    font-size: 13px;
+}
+
+/* Centred "get in touch" section. */
+.cta {
+    text-align: center;
+}
+
+
+/* ---------- 5. Project pages ---------- */
+
+.page-intro {
+    padding: 70px 12% 40px;
+}
+
+/* Each project: text on the left, images on the right (grid). */
+.project {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 40px;
+    padding: 50px 12%;
+    border-top: 1px solid #d8d5ce;
+}
+
+.project-text p {
+    color: #66635e;
+}
+
+/* Small list of tools used. */
+.tags {
+    list-style: none;
+    color: #c45b36;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+/* Image galleries (grid). */
+.gallery {
+    display: grid;
+    gap: 20px;
+}
+
+.gallery-2 {
+    grid-template-columns: 1fr 1fr;
+}
+
+.gallery-3 {
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+/* This image stretches across both columns. */
+.gallery .wide {
+    grid-column: 1 / 3;
+}
+
+/* Tall phone-shaped video stills are all cut to the same height. */
+.gallery-tall img {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+}
+
+/* Content types in three columns (grid). */
+.service-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 24px;
+    margin-top: 20px;
+}
+
+/* Work history: dates on the left, details on the right (grid). */
+.experience-list article {
+    display: grid;
+    grid-template-columns: 150px 1fr;
+    gap: 20px;
+    border-top: 1px solid #d8d5ce;
+    padding: 24px 0;
+}
+
+.role {
+    color: #c45b36;
+}
+
+
+/* ---------- 6. About page (tables and form) ---------- */
+
+.about-grid {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 50px;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 50px;
+}
+
+caption {
+    text-align: left;
+    font-size: 20px;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+th,
+td {
+    text-align: left;
+    padding: 12px;
+    border-bottom: 1px solid #d8d5ce;
+}
+
+th {
+    background-color: #e8e4dc;
+}
+
+/* Contact details next to the form (grid). */
+.contact-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 50px;
+}
+
+.social-links {
+    list-style: none;
+    margin-top: 16px;
+}
+
+.contact-form fieldset {
+    border: none;
+}
+
+.contact-form legend {
+    font-weight: bold;
+}
+
+.contact-form label {
+    display: block;
+    margin-top: 14px;
+}
+
+.contact-form input,
+.contact-form select,
+.contact-form textarea {
+    width: 100%;
+    padding: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 15px;
+}
+
+.contact-form .button {
+    border: none;
+    margin-top: 20px;
+    font-size: 15px;
+}
+
+
+/* ---------- 7. Footer ---------- */
+
+.site-footer {
+    display: flex;
+    justify-content: space-between;
+    padding: 25px 7%;
+    font-size: 13px;
+    border-top: 1px solid #d8d5ce;
+}
+
+.site-footer ul {
+    display: flex;
+    gap: 20px;
+    list-style: none;
+}
+
+.site-footer a {
+    color: #20201e;
+}
+
+
+/* ---------- 8. Small screens ---------- */
+
+/* On screens narrower than 700px, put everything in one column. */
+@media (max-width: 700px) {
+    .site-header,
+    .split,
+    .stats,
+    .site-footer {
+        flex-direction: column;
+        gap: 14px;
+    }
+
+    .site-nav ul {
+        flex-wrap: wrap;
+        gap: 14px;
+    }
+
+    h1 {
+        font-size: 40px;
+    }
+
+    h2 {
+        font-size: 28px;
+    }
+
+    .section,
+    .hero,
+    .page-intro,
+    .project {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .card-grid,
+    .about-preview,
+    .project,
+    .gallery-2,
+    .gallery-3,
+    .service-grid,
+    .experience-list article,
+    .about-grid,
+    .contact-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .gallery .wide {
+        grid-column: auto;
+    }
+
+    .gallery-tall img {
+        height: auto;
+    }
+}
